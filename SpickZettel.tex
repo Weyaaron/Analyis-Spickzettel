@@ -1,0 +1,266 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cheatsheet
+% LaTeX Template
+% Version 1.0 (12/12/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Michael Müller (https://github.com/cmichi/latex-template-collection) with
+% extensive modifications by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{scrartcl} % 11pt font size
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage[margin=0pt, landscape]{geometry} % Page margins and orientation
+
+\usepackage{graphicx} % Required for including images
+
+\usepackage{xcolor} % Required for color customization
+\definecolor{mygray}{gray}{.75} % Custom color
+
+\usepackage{url} % Required for the \url command to easily display URLs
+\usepackage{tikz} % Required for the \keystroke command defined below to easily display Keys to press
+
+\usepackage[ % This block contains information used to annotate the PDF
+colorlinks=false, 
+pdftitle={Cheatsheet}, 
+pdfauthor={Aaron Wey, Markus Richter}, 
+pdfsubject={Compilation of useful shortcuts}, 
+pdfkeywords={Bash, Cheatsheet}
+]{hyperref}
+
+\setlength{\unitlength}{1mm} % Set the length that numerical units are measured in
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+
+\renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
+
+\newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
+
+\newcommand{\sectiontitle}[1]{\paragraph{#1} \ \\} % Custom command for subsection titles
+
+
+\colorlet{cmdColor}{blue}
+\colorlet{argColor}{red}
+
+
+\colorlet{cmdColor}{blue}
+\colorlet{argColor}{red}
+
+\newcommand{\Cmd}[1]{
+\color{cmdColor}\$ #1
+\color{black}
+}
+
+\newcommand{\Arg}[1]{
+\color{argColor}#1 \color{black}
+}
+
+
+\newcommand{\Cmdp}[1]{
+\color{cmdColor} #1
+\color{black}
+}
+\usetikzlibrary{arrows, shapes, positioning, shadows}
+
+\newcommand*\keystroke[1]{%
+	\tikz[baseline=(key.base)]
+	\node[%
+	draw,
+	fill=white,
+	drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+	rectangle,
+	rounded corners=2pt,
+	inner sep=1pt,
+	inner xsep=2pt,
+	line width=0.5pt,
+	font=\scriptsize\sffamily
+	](key) {#1\strut}
+	;
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{picture}(297,210) % Create a container for the page content
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\put(10,200){ % Position on the page to put the title
+\begin{minipage}[t]{210mm} % The size and alignment of the title
+\section*{Übersicht der im Unix-Crashkurs behandelten Befehle} % Title
+\end{minipage}
+}
+
+%----------------------------------------------------------------------------------------
+%	FIRST COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(10,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house text
+
+
+\sectiontitle{Nützliche Tasten}
+
+\command{\keystroke{Tab}}{Autovervollständigung}
+\command{\keystroke{Tab} \keystroke{Tab}}{Zeigt sinnvolle Argumente}
+\command{\keystroke{Shift}+\keystroke{Tab}}{Iteriert über die Argumente rückwärts} %Todo: Passende Forulierung finden
+\command{\keystroke{Pos1}, \keystroke{Strg}+\keystroke{a}}{Springt zum Anfang der Eingabezeile}
+\command{\keystroke{Ende}, \keystroke{Strg}+\keystroke{e}}{Springt zum Ende der Eingabezeile}
+\\
+\command{\keystroke{$\uparrow$}, \keystroke{$\downarrow$}}{Iteriert durch letzte Eingaben}
+\command{\keystroke{Strg}+\keystroke{r}}{Sucht in den letzten Befehlen}
+\command{\keystroke{Strg}+\keystroke{c}}{Bricht den aktuellen Befehl ab}
+
+\sectiontitle{Hilfsbefehle}
+
+\command{\Cmd{man} \Arg{Befehl}}{Öffnet die \glqq  Manual-Page\grqq{}}
+\command{\Cmd{Befehl} \Arg{-h}}{Öffnet die Hilfe zu diesem Befehl}
+\command{\Cmd{apropos} \Arg{Suchwort}}{Durchsucht die Man-Pages}
+\command{\Cmd{whatis} \Arg{Befehl}}{Zeigt Kurzbeschreibung}
+			
+\sectiontitle{Orientierung}
+
+%\command{\Cmd{pwd}}{Zeige den momentanen Pfad}
+\command{\Cmd{ls}}{Zeige den Ordnerinhalt}
+\command{\Cmd{cd} \Arg{Zielpfad}}{Wechsle nach Zielpfad}
+\command{\Cmd{exit}}{Beende die aktuelle Kommandozeile}
+
+\sectiontitle{Dateibefehle}
+
+\command{\Cmd{mv} \Arg{Quellpfad Zielpfad}}{Verschiebt Ziel}
+\command{\Cmd{cp} \Arg{Quellpfad Zielpfad}}{Kopiert Ziel}
+\command{\Cmd{rm} \Arg{Dateipfad}}{Löscht Datei/Ordner}
+\command{\Cmd{mkdir} \Arg{Zielpfad}}{Erstellt einen neuen Ordner }
+\command{\Cmd{cat} \Arg{Zielpfade}}{Gibt eine oder mehrere Dateien nacheinander aus}
+\command{\Cmd{less} \Arg{Dateipfad}}{Zeigt die Datei an}
+\command{\Cmd{grep} \Arg{SuchWort Dateipfad}}{Gibt alle Zeilen mit SuchWort aus}
+
+
+
+
+\end{minipage} % End the first column of text
+} % End the first division of the page
+%----------------------------------------------------------------------------------------
+%	SECOND COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(105,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house text
+
+%----------------------------------------------------------------------------------------
+%	HEADING FOUR
+%----------------------------------------------------------------------------------------
+\sectiontitle{Editoren}
+
+\command{\Cmd{nano} \Arg{Dateipfad}}{Öffnet Datei in Nano}
+\command{\keystroke{Strg}+\keystroke{x}}{Nano schließen}
+\command{\Cmd{vim} \Arg{Dateipfad}}{Öffnet Datei in Vim}
+\command{\keystroke{Esc}\keystroke{:}\keystroke{w}\keystroke{q}\keystroke{Enter}}{Vim mit Speichern schließen}
+\command{\keystroke{Esc}\keystroke{:}\keystroke{q}\keystroke{!}\keystroke{Enter}}{Vim ohne Speichern schließen}
+
+
+					
+%----------------------------------------------------------------------------------------
+%	HEADING FIVE
+%----------------------------------------------------------------------------------------				
+					
+\sectiontitle{Benutzer und Rechte} % Heading five
+
+\command{\Cmd{ls} \Arg{-la Pfad}}{Zeige den Ordnerinhalt(inkl. versteckten Dateien) von Pfad als Tabelle}%TODO kurze Rechteauflistung (Owner/Group/All)
+\command{\Cmd{sudo} \Arg{Befehl}}{Führe Befehl als root-Nutzer aus}
+\command{\Cmd{chmod} \Arg{Änderungen Dateipfad(e)}}{Ändere Rechte}
+\command{\Cmd{chown} \Arg{Nutzer:Gruppe Dateipfad(e)}}{Andere Eigentümer}
+
+\sectiontitle{Pipes und Befehlsketten}
+
+\tikzstyle{cmdBlock} = [rectangle, draw, fill=blue!20, text width=3em, text centered, rounded corners, minimum height=7em, inner sep=0pt]
+\tikzstyle{cmdOut} = [isosceles triangle, draw, minimum width=0.1cm, text centered, minimum height=1.3cm, inner sep=0pt]
+
+\command{\Cmd{Befehl1} \Arg{Argumente} \&\& \Cmdp{Befehl2} \Arg{Argumente}}{Führe erst Befehl1, danach Befehl2 aus, falls Befehl1 keine Fehler hatte}
+\command{\Cmd{Befehl1} \Arg{Argumente} ; \Cmdp{Befehl2} \Arg{Argumente}}{Führe erst Befehl1, danach auf jeden Fall Befehl2 aus}
+\command{\Cmd{Befehl1} \Arg{Argumente} | \Cmdp{Befehl2} \Arg{Argumente}}{Leite die Ausgabe von Befehl1 als Eingabe in Befehl2 um}
+\command{\Cmd{Befehl} < \Arg{Datei}}{Inhalt der Datei als Befehlsinput}
+\command{\Cmd{Befehl} > \Arg{Datei}}{Speichert Ausgabe in Datei (nur Fehlerausgabe: 2>)}
+\command{\Cmd{Befehl} {>}{>} \Arg{Datei}}{Schreibt Ausgabe an das Ende der Datei}
+\command{\Cmd{Befehl} 2>\&1 > \Arg{Datei}}{Schreibt alle Ausgaben in Datei}
+
+\end{minipage} % End the second column of text
+} % End the second division of the page
+
+%----------------------------------------------------------------------------------------
+%	THIRD COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(200,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house tex
+
+%----------------------------------------------------------------------------------------
+%	IMPORTANT FILES
+%----------------------------------------------------------------------------------------
+
+\sectiontitle{Globbing (Mehrere Pfade auf einmal angeben)}
+\command{\Arg{*}}{Alle nicht-versteckten Dateien und Ordner}
+\command{\Arg{*/}}{Alle nicht-versteckten Ordner}
+\command{\Arg{*a*}}{Alle nicht-versteckten Dateien und Ordner, die a enthalten}
+\command{\Arg{?}}{irgend ein einzelnes Zeichen}
+\command{\Arg{\{a,b,c\}.pdf}}{ist a.pdf,b.pdf und c.pdf}
+
+
+\sectiontitle{Wichtige Programme}
+\command{\Cmd{ssh} \Arg{Benutzer@Ziel-Domain}}{Öffnet SSH-Verbindung}
+\command{\Cmd{rsync} \Arg{Datei Benutzer@Ziel-Domain:Zielpfad}}{Kopiert Datei auf entfernten Server}
+%\sectiontitle{Wichtige interaktive Programme}
+\command{\Cmd{tar} \Arg{-cf Archiv.tar Quellpfade}}{Erstelle Archiv}
+\command{\Cmd{tar} \Arg{-czf Archiv.tar.gz Quellpfade}}{Erstelle komprimiertes Archiv}
+\command{\Cmd{tar} \Arg{-xf Archivdatei}}{Entpacke Archiv}
+\command{\Cmd{top}}{Zeige Prozesse und Auslastung des Computers (besser: \Cmd{htop})}
+\command{\Cmd{killall} \Arg{Prozessname}}{beende laufenden Prozess (auch: \Cmd{pkill})}
+
+
+
+%----------------------------------------------------------------------------------------
+%	LINKS AND INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	FOOTNOTE
+%----------------------------------------------------------------------------------------
+
+\vspace{\baselineskip}
+\linethickness{0.5mm} % Thickness of the footer line
+{\color{mygray}\line(1,0){30}} % Print the line with a custom color
+
+\footnotesize{
+Created by Aaron Wey, Markus Richter, 2019. Last updated 2020\\ 
+\url{https://hu.berlin/unixkurs20}\\
+				
+Released under the CC-BY-SA license.
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the third column of text
+} % End the third division of the page
+\end{picture} % End the container for the entire page
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
