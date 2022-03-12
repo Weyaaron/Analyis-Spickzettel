@@ -104,7 +104,8 @@ pdfkeywords={Bash, Cheatsheet}
 
 \put(10,200){ % Position on the page to put the title
 \begin{minipage}[t]{210mm} % The size and alignment of the title
-\section*{Übersicht der im Unix-Crashkurs behandelten Befehle} % Title
+\section*{Cheatsheet Termumformungen Analysis für InformatikerInnen} % Title
+Die Formeln sind grob nach Nützlichkeit sortiert.
 \end{minipage}
 }
 
@@ -116,44 +117,16 @@ pdfkeywords={Bash, Cheatsheet}
 \begin{minipage}[t]{85mm} % Create a box to house text
 
 
-\sectiontitle{Nützliche Tasten}
-
-\command{\keystroke{Tab}}{Autovervollständigung}
-\command{\keystroke{Tab} \keystroke{Tab}}{Zeigt sinnvolle Argumente}
-\command{\keystroke{Shift}+\keystroke{Tab}}{Iteriert über die Argumente rückwärts} %Todo: Passende Forulierung finden
-\command{\keystroke{Pos1}, \keystroke{Strg}+\keystroke{a}}{Springt zum Anfang der Eingabezeile}
-\command{\keystroke{Ende}, \keystroke{Strg}+\keystroke{e}}{Springt zum Ende der Eingabezeile}
-\\
-\command{\keystroke{$\uparrow$}, \keystroke{$\downarrow$}}{Iteriert durch letzte Eingaben}
-\command{\keystroke{Strg}+\keystroke{r}}{Sucht in den letzten Befehlen}
-\command{\keystroke{Strg}+\keystroke{c}}{Bricht den aktuellen Befehl ab}
-
-\sectiontitle{Hilfsbefehle}
-
-\command{\Cmd{man} \Arg{Befehl}}{Öffnet die \glqq  Manual-Page\grqq{}}
-\command{\Cmd{Befehl} \Arg{-h}}{Öffnet die Hilfe zu diesem Befehl}
-\command{\Cmd{apropos} \Arg{Suchwort}}{Durchsucht die Man-Pages}
-\command{\Cmd{whatis} \Arg{Befehl}}{Zeigt Kurzbeschreibung}
-			
-\sectiontitle{Orientierung}
-
-%\command{\Cmd{pwd}}{Zeige den momentanen Pfad}
-\command{\Cmd{ls}}{Zeige den Ordnerinhalt}
-\command{\Cmd{cd} \Arg{Zielpfad}}{Wechsle nach Zielpfad}
-\command{\Cmd{exit}}{Beende die aktuelle Kommandozeile}
-
-\sectiontitle{Dateibefehle}
-
-\command{\Cmd{mv} \Arg{Quellpfad Zielpfad}}{Verschiebt Ziel}
-\command{\Cmd{cp} \Arg{Quellpfad Zielpfad}}{Kopiert Ziel}
-\command{\Cmd{rm} \Arg{Dateipfad}}{Löscht Datei/Ordner}
-\command{\Cmd{mkdir} \Arg{Zielpfad}}{Erstellt einen neuen Ordner }
-\command{\Cmd{cat} \Arg{Zielpfade}}{Gibt eine oder mehrere Dateien nacheinander aus}
-\command{\Cmd{less} \Arg{Dateipfad}}{Zeigt die Datei an}
-\command{\Cmd{grep} \Arg{SuchWort Dateipfad}}{Gibt alle Zeilen mit SuchWort aus}
-
-
-
+    \sectiontitle{Brüche} \command{ \[  \frac{a}{b} \; + \; \frac{c}{d} \; = \;
+    \frac{a \cdot d + c \cdot b}{b \cdot d}  \]}{}
+    \command{ \[  \frac{a}{b} \; \cdot \; \frac{c}{d} \; = \; \frac{a \cdot c}{b \cdot d} \]}{}
+    \command{ \[ \frac{a}{b}  :  \frac{c}{d} \; = \; \frac{a}{b} \; \cdot \; \frac{d}{c} \; = \; \frac{a \cdot d}{b \cdot c} \]}{}
+    \command{ \[ {\frac  {a}{b}}:n\;=\;{\frac  {a}{b\cdot n}}\quad  \] }{}
+    \command{ \[ \quad n:{\frac  {a}{b}}\;=\;{\frac  {n\cdot b}{a}} \] }{} 
+    \command{ \[  \frac{a^n}{b^m} = a^n \cdot b^{-m}\] }{} 
+    \command{ \[  \frac{a^n}{a^m} = a^{n-m}\] }{} 
+    \command{ \[  \frac{a^n}{b^n} = \left(\frac{a}{b}\right)^n\] }{} 
+    Siehe dazu auch: \url{https://de.wikipedia.org/wiki/Bruchrechnung}
 
 \end{minipage} % End the first column of text
 } % End the first division of the page
@@ -167,39 +140,18 @@ pdfkeywords={Bash, Cheatsheet}
 %----------------------------------------------------------------------------------------
 %	HEADING FOUR
 %----------------------------------------------------------------------------------------
-\sectiontitle{Editoren}
+    \sectiontitle{Potenzen/Wurzeln}
 
-\command{\Cmd{nano} \Arg{Dateipfad}}{Öffnet Datei in Nano}
-\command{\keystroke{Strg}+\keystroke{x}}{Nano schließen}
-\command{\Cmd{vim} \Arg{Dateipfad}}{Öffnet Datei in Vim}
-\command{\keystroke{Esc}\keystroke{:}\keystroke{w}\keystroke{q}\keystroke{Enter}}{Vim mit Speichern schließen}
-\command{\keystroke{Esc}\keystroke{:}\keystroke{q}\keystroke{!}\keystroke{Enter}}{Vim ohne Speichern schließen}
+    \command{ \[ a^{{-r}}={\frac  {1}{a^{r}}} \text{ \bf \ und \ } {\displaystyle a^{-{\frac {k}{n}}}={\frac {1}{a^{\frac {k}{n}}}} }\] }{}
+    \command{ \[ a^{{{\frac  {m}{n}}}}={\sqrt[ {n}]{a^{m}}}=({\sqrt[ {n}]a})^{m} \] }{}
+    \command{ \[ a^{{r-s}}={\frac  {a^{r}}{a^{s}}} \] }{}
+    \command{ \[ (a\cdot b)^{r}=a^{r}\cdot b^{r} \text{\bf \ und \ }  {\sqrt[{n}]{a}}\cdot {\sqrt[{n}]{b}}={\sqrt[{n}]{a\cdot b}}  \] }{}
+    \command{ \[ \left({\frac  {a}{b}}\right)^{r}={\frac  {a^{r}}{b^{r}}} \text{\bf \ und \ } {\frac {\sqrt[{n}]{a}}{\sqrt[{n}]{b}}}={\sqrt[{n}]{\frac {a}{b}}} \] }{}
+    \command{ \[ (a^{r})^{s}=a^{{r\cdot s}} \text{\bf \ und \ } {\sqrt[ {m}]{{\sqrt[ {n}]{a}}}}={\sqrt[ {m\cdot n}]{a}} \] }{}
+    \command{ \[ a^0 = 1\]}{}
 
-
-					
-%----------------------------------------------------------------------------------------
-%	HEADING FIVE
-%----------------------------------------------------------------------------------------				
-					
-\sectiontitle{Benutzer und Rechte} % Heading five
-
-\command{\Cmd{ls} \Arg{-la Pfad}}{Zeige den Ordnerinhalt(inkl. versteckten Dateien) von Pfad als Tabelle}%TODO kurze Rechteauflistung (Owner/Group/All)
-\command{\Cmd{sudo} \Arg{Befehl}}{Führe Befehl als root-Nutzer aus}
-\command{\Cmd{chmod} \Arg{Änderungen Dateipfad(e)}}{Ändere Rechte}
-\command{\Cmd{chown} \Arg{Nutzer:Gruppe Dateipfad(e)}}{Andere Eigentümer}
-
-\sectiontitle{Pipes und Befehlsketten}
-
-\tikzstyle{cmdBlock} = [rectangle, draw, fill=blue!20, text width=3em, text centered, rounded corners, minimum height=7em, inner sep=0pt]
-\tikzstyle{cmdOut} = [isosceles triangle, draw, minimum width=0.1cm, text centered, minimum height=1.3cm, inner sep=0pt]
-
-\command{\Cmd{Befehl1} \Arg{Argumente} \&\& \Cmdp{Befehl2} \Arg{Argumente}}{Führe erst Befehl1, danach Befehl2 aus, falls Befehl1 keine Fehler hatte}
-\command{\Cmd{Befehl1} \Arg{Argumente} ; \Cmdp{Befehl2} \Arg{Argumente}}{Führe erst Befehl1, danach auf jeden Fall Befehl2 aus}
-\command{\Cmd{Befehl1} \Arg{Argumente} | \Cmdp{Befehl2} \Arg{Argumente}}{Leite die Ausgabe von Befehl1 als Eingabe in Befehl2 um}
-\command{\Cmd{Befehl} < \Arg{Datei}}{Inhalt der Datei als Befehlsinput}
-\command{\Cmd{Befehl} > \Arg{Datei}}{Speichert Ausgabe in Datei (nur Fehlerausgabe: 2>)}
-\command{\Cmd{Befehl} {>}{>} \Arg{Datei}}{Schreibt Ausgabe an das Ende der Datei}
-\command{\Cmd{Befehl} 2>\&1 > \Arg{Datei}}{Schreibt alle Ausgaben in Datei}
+    Siehe dazu auch: \url{https://de.wikipedia.org/wiki/Wurzel_(Mathematik)} sowie
+    \url{https://de.wikipedia.org/wiki/Potenz_(Mathematik)}
 
 \end{minipage} % End the second column of text
 } % End the second division of the page
@@ -215,31 +167,17 @@ pdfkeywords={Bash, Cheatsheet}
 %	IMPORTANT FILES
 %----------------------------------------------------------------------------------------
 
-\sectiontitle{Globbing (Mehrere Pfade auf einmal angeben)}
-\command{\Arg{*}}{Alle nicht-versteckten Dateien und Ordner}
-\command{\Arg{*/}}{Alle nicht-versteckten Ordner}
-\command{\Arg{*a*}}{Alle nicht-versteckten Dateien und Ordner, die a enthalten}
-\command{\Arg{?}}{irgend ein einzelnes Zeichen}
-\command{\Arg{\{a,b,c\}.pdf}}{ist a.pdf,b.pdf und c.pdf}
+    \sectiontitle{Binomische Formeln}
+    \command{ \[ {\displaystyle (a+b)^{2}=a^{2}+2ab+b^{2}}\] }{}
+    \command{ \[ {\displaystyle (a-b)^{2}=a^{2}-2ab+b^{2}}\] }{}
+    \command{\[ (a+b)\cdot (a-b)=a^{2}-b^{2} \] }{}
 
-
-\sectiontitle{Wichtige Programme}
-\command{\Cmd{ssh} \Arg{Benutzer@Ziel-Domain}}{Öffnet SSH-Verbindung}
-\command{\Cmd{rsync} \Arg{Datei Benutzer@Ziel-Domain:Zielpfad}}{Kopiert Datei auf entfernten Server}
-%\sectiontitle{Wichtige interaktive Programme}
-\command{\Cmd{tar} \Arg{-cf Archiv.tar Quellpfade}}{Erstelle Archiv}
-\command{\Cmd{tar} \Arg{-czf Archiv.tar.gz Quellpfade}}{Erstelle komprimiertes Archiv}
-\command{\Cmd{tar} \Arg{-xf Archivdatei}}{Entpacke Archiv}
-\command{\Cmd{top}}{Zeige Prozesse und Auslastung des Computers (besser: \Cmd{htop})}
-\command{\Cmd{killall} \Arg{Prozessname}}{beende laufenden Prozess (auch: \Cmd{pkill})}
-
-
-
-%----------------------------------------------------------------------------------------
-%	LINKS AND INFORMATION
-%----------------------------------------------------------------------------------------
-
-
+    \sectiontitle{ \glqq{}Komische Identitäten\grqq{}}
+    \command{ \[x = x + 0 \text{ \bf \ und \ } x = x \cdot 1  \] }{}
+    \command{ \[ x = x + a -a \] }{}
+    \command{ \[ x = \frac{\frac{1}{1}}{x} \] }{}
+    \command{ \[ x = ln(e^x) \] }{}
+    \command{ \[ f(x) = e^{ln(f(x))} \] }{}
 %----------------------------------------------------------------------------------------
 %	FOOTNOTE
 %----------------------------------------------------------------------------------------
@@ -249,10 +187,9 @@ pdfkeywords={Bash, Cheatsheet}
 {\color{mygray}\line(1,0){30}} % Print the line with a custom color
 
 \footnotesize{
-Created by Aaron Wey, Markus Richter, 2019. Last updated 2020\\ 
-\url{https://hu.berlin/unixkurs20}\\
-				
-Released under the CC-BY-SA license.
+Created by Aaron Wey, 2022. Last updated \today \\
+% Todo: Auf Github verlinken	
+Released under the MIT License.
 }
 
 %----------------------------------------------------------------------------------------
