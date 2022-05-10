@@ -189,7 +189,7 @@ Die Formeln sind grob nach Nützlichkeit sortiert.
 \footnotesize{
 Created by Aaron Wey, 2022. Last updated \today \\
 % Todo: Auf Github verlinken	
-Released under the MIT License, for up-to-date-versions visit:
+Released under the MIT License, for up-to-date-versions visit: 
     \url{https://github.com/Weyaaron/Analyis-Spickzettel/releases/}
 }
 %----------------------------------------------------------------------------------------
@@ -199,5 +199,80 @@ Released under the MIT License, for up-to-date-versions visit:
 \end{picture} % End the container for the entire page
 
 %----------------------------------------------------------------------------------------
+\begin{picture}(297,210) % Create a container for the page content
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\put(10,200){ % Position on the page to put the title
+\begin{minipage}[t]{210mm} % The size and alignment of the title
+\section*{Cheatsheet Termumformungen Analysis für InformatikerInnen} % Title
+Mehr Dinge.
+\end{minipage}
+}
+
+%----------------------------------------------------------------------------------------
+%	FIRST COLUMN SPECIFICATION
+%----------------------------------------------------------------------------------------
+
+\put(10,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house text
+
+
+    \sectiontitle{Ungleichungen} 
+    \command{Bernoulli:\[ {\displaystyle (1+x)^n \geq 1+nx}\] }{}
+    \command{Dreiecksungleichung: \[ {\displaystyle |x+y| \leq |x| + |y|}\] }{}
+    \command{Dreiecksungleichung: \[ {\displaystyle |x-y| \geq ||x| - |y||}\] }{}
+    \command{Eudoxos: \[ {\displaystyle \forall x>0 \exists n\in\mathbb{N}: \frac{1}{n} < x}\] }{}
+\end{minipage} % End the first column of text
+} % End the first division of the page
+%----------------------------------------------------------------------------------------
+%	SECOND COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(105,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house text
+
+%----------------------------------------------------------------------------------------
+%	HEADING FOUR
+%----------------------------------------------------------------------------------------
+    \sectiontitle{Bekannte Limites}
+    \command{\[ {\displaystyle \lim_{n \to \infty} \frac{1}{n} = 0}\] }{}
+    \command{\[ {\displaystyle \lim_{n \to \infty} \frac{1}{\sqrt[k]{n}} = 0}\] }{}
+    \command{\[ {\displaystyle \lim_{n \to \infty} \frac{1}{\sqrt[n]{y}} = 1}\] }{}
+    \command{\[ {\displaystyle \lim_{n \to \infty} \frac{1}{\sqrt[n]{n}} = 1}\] }{}
+    \command{\[ {\displaystyle x\in\mathbb{R}:|x|<1:\lim_{n \to \infty} x^n = 0}\] }{}
+    \command{\[ {\displaystyle l\in\mathbb{N},x\in\mathbb{R}:|x|<1:\lim_{n \to \infty} n^l \cdot x^n = 0}\] }{}
+\end{minipage} % End the second column of text
+} % End the second division of the page
+
+%----------------------------------------------------------------------------------------
+%	THIRD COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(200,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house tex
+
+    \sectiontitle{TBD}
+%----------------------------------------------------------------------------------------
+%	FOOTNOTE
+%----------------------------------------------------------------------------------------
+
+\vspace{\baselineskip}
+\linethickness{0.5mm} % Thickness of the footer line
+{\color{mygray}\line(1,0){30}} % Print the line with a custom color
+
+\footnotesize{
+Created by Aaron Wey & Annabella Gethke, 2022. Last updated \today \\
+% Todo: Auf Github verlinken	
+Released under the MIT License, for up-to-date-versions visit: 
+    \url{https://github.com/Weyaaron/Analyis-Spickzettel/releases/}
+}
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the third column of text
+} % End the third division of the page
+\end{picture} % End the container for the entire page
 
 \end{document}
